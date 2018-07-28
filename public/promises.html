@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset="utf-8" />
+<script>
+
+// define promises
+
+var A = function() {
+
+    return new Promise(function(resolve, reject) {
+        var result = '####A ';
+        resolve(result);
+    })
+}
+
+var B = function() {
+
+    return new Promise(function(resolve, reject) {
+        var result = '####B '
+
+        setTimeout(function() {
+            resolve(result);
+        }, 2000)
+    })
+}
+
+var C = function() {
+
+    return new Promise(function(resolve, reject) {
+        var result = '####C '
+        console.log(result)
+        resolve(result);
+    })
+}
+
+var D = function() {
+
+    return new Promise(function(resolve, reject) {
+        var result = '####D '
+        console.log(result)
+        resolve(result);
+    })
+}
+
+var E = function() {
+
+    return new Promise(function(resolve, reject) {
+        var result = '####E '
+        console.log(result)
+        resolve(result);
+    })
+}
+
+var F = function() {
+
+    return new Promise(function(resolve, reject) {
+        var result = '####F '
+        console.log(result)
+        resolve(result);
+    })
+}
+
+
+// Now use the promises defined above
+var resultFromA; 
+var resultFromB;
+var resultFromC;
+var resultFromD;
+
+A()
+.then(function(result) { 
+	resultFromA = result; 
+	console.log('>> About to call promise B. result from promise A was : ' + resultFromA);
+    return B();
+})
+.then(function(result) { 
+	resultFromB = result; 
+	console.log('>> About to call promise C. result from promise A and B was : ' + resultFromA + resultFromB);
+    return C();
+})
+.then(function(result) { 
+	resultFromC = result; 
+	console.log('>> About to call promise D. result from promise A and B and C was : ' + resultFromA + ' ' + resultFromB + ' ' + resultFromC);
+	throw 'error was thrown on purpose';
+    return D();
+})
+.catch(function(error) {
+  console.log('An error occurerd : ' + error);
+  return ('ERROR result D')
+})
+.then(function(result) { 
+	resultFromD = result; 
+	console.log('>> About to call promise E. result from promise A and B and C and D was : ' + resultFromA + ' ' + resultFromB + ' ' + resultFromC + ' ' + resultFromD);
+    return E();
+})
+
+.then(function(result) { 
+	resultFromE = result; 
+	console.log('>> About to call promise F. result from promise A and B and C and D and E was : ' + resultFromA + ' ' + resultFromB + ' ' + resultFromC + ' ' + resultFromD + ' ' + resultFromE);
+    return F();
+})
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

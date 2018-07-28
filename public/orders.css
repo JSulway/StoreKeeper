@@ -1,0 +1,70 @@
+.page .orders .orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top:10px;
+}
+
+.page .orders .orders-table td, th {
+  text-align: left;
+  padding: 10px 60px 10px 10px;
+  border-bottom: 1px solid grey;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: black;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: black;
+  background: white;
+}
+
+.page .orders .orders-table th {
+  font-weight: regular;
+  color: grey;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  background: #ffecd8;
+}
+
+.page .orders .orders-table th.sorted-by {
+  color: grey;
+  border-bottom: 1px solid orange;
+}
+
+.selectedstatus{
+	color:red;
+	background-color:#ffecd8;
+	border-left-style:solid;
+	border-left-width:2px;
+	border-left-color:black;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:red;
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:black;
+	margin-left: 5px;
+}
+
+.status{
+	color:black;
+	background-color:white;
+	border-left-style:solid;
+	border-left-width:2px;
+	border-left-color:black;
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:black;
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:black;
+	margin-left: 5px;
+	
+}
+
+.status-nav a{
+	padding: 10px 60px 10px 10px;
+	padding-bottom: 10px;
+	cursor: pointer;
+}
